@@ -1,0 +1,33 @@
+/* Empty. Add your own CSS if you like */
+@font-face {
+    font-family: "Roman Font";
+    src: url(../css/font/fontawesome-webfont.ttf) format("truetype");
+}
+.header {
+    text-transform: uppercase;
+    font-family: "Montserrat", Helvetica, Arial, sans-serif;
+    color: #ffffff;
+}
+.result{
+    font-family: "Montserrat", Helvetica, Arial, sans-serif;
+    color: #ffffff;
+}
+
+body{
+    background-color: #0465F6;
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+    color: #ffffff;
+}
+form{
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+    color: #ffffff;
+}
+div.form-group{
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+}
+
+.custombutton{
+    font-family: "Montserrat", Helvetica, Arial, sans-serif;
+}
+
+

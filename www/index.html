@@ -1,0 +1,94 @@
+<html ng-app="convertNumber">
+  <head>
+    <meta charset="utf-8">
+    <title>Todo</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- Needed for Cordova/PhoneGap (will be a 404 during development) -->
+    <script src="js/app.js"></script>
+    <script src="cordova.js"></script>
+    <script src="js/angular.translate.min.js"></script>
+  </head>
+  <body  ng-controller="convertController as convert">
+
+
+  <ion-side-menus>
+
+      <!-- Center content -->
+      <ion-side-menu-content ng-controller="ContentController">
+
+          <ion-header-bar align-title="center" class="bar-balanced">
+              <h1 class="title header">{{ "TITLE" | translate }}</h1>
+             <!-- <div class="buttons">
+                  <button class="button">Menu</button>
+              </div>-->
+              <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
+
+          </ion-header-bar>
+          <ion-content style="background-color: #0465F6">
+              <div class="list list-inset" style="position: relative;margin-top: 70px;">
+
+                  <label class="item item-input">
+                      <input type="text"  placeholder="CLXIV" ng-model="convert.roman_number" ng-keyup="convert.convertRoman()">
+                  </label>
+                  <label class="item item-input">
+                      <input type="number"  placeholder="164" ng-model="convert.arabic_number" ng-keyup="convert.convertArabic()">
+                  </label>
+              </div>
+              <h3 class="result text-center">{{ "ROMAN_NUMBER" | translate }} {{convert.roman_number}}</h3>
+              <h3 class="result text-center">{{ "ARABIC_NUMBER" | translate }} {{convert.arabic_number}}</h3>
+              <button class="button button-block button-royal custombutton" ng-click="convert.reset()">
+                  Reset
+              </button>
+
+          </ion-content>
+          <ion-footer-bar align-title="center" class="bar-balanced">
+
+                  <h1 class="title header">{{ "DEVELOPED" | translate }} <a href="http://www.baraccasoftware.com"><u>BaraccaSoftware</u></a></h1>
+
+          </ion-footer-bar>
+      </ion-side-menu-content>
+
+      <!-- Right menu -->
+      <ion-side-menu side="right">
+          <ion-header-bar class="bar-dark">
+
+                  <h1 class="title header">Menu</h1>
+
+          </ion-header-bar>
+          <ion-content>
+              <div class="list" ng-controller="TranslateController">
+                  <div class="item item-divider">
+                      {{ "LANGUAGE" | translate }}
+                  </div>
+                  <label class="item item-radio" ng-click="changeLanguage('it')">
+                      <input type="radio" name="group">
+                      <div class="item-content" >
+                          Italian
+                      </div>
+                      <i class="radio-icon ion-checkmark"></i>
+                  </label>
+                  <label class="item item-radio" ng-click="changeLanguage('en')">
+                      <input type="radio" name="group" value="on">
+                      <div class="item-content">
+                          English
+                      </div>
+                      <i class="radio-icon ion-checkmark"></i>
+                  </label>
+
+
+              </div>
+          </ion-content>
+      </ion-side-menu>
+
+  </ion-side-menus>
+
+
+</body>
+</html>
